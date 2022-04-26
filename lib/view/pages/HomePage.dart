@@ -18,8 +18,9 @@ class HomePage extends StatelessWidget {
             color: Colors.blue,
             onPressed: () async {
               var response = await MyFatoorah.startPayment(
+                // afterPaymentBehaviour: AfterPaymentBehaviour.AfterCallbackExecution,
                 context: context,
-                errorChild: Center(child: Text('error')),
+                errorChild: Center(child: Text('error', style: TextStyle(color: Colors.red))),
                 request: MyfatoorahRequest.test(
                   currencyIso: Country.SaudiArabia,
                   successUrl: 'https://openjournalsystems.com/file/2017/07/payment-success.png',
